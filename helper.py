@@ -148,7 +148,7 @@ class CheggHelper:
                     soup = BeautifulSoup(res.text, 'html.parser')
                     dd = soup.find('script', attrs={'id': '__NEXT_DATA__'})
                     js = json.loads(dd.text)
-                    q_id = js['props']['pageProps']['questionData']['uuid']
+                    q_id = js['props']['pageProps']['questionResult']['question']['uuid']
                 except:
                     q_id = res.text.split('questionUuid":"')[1].split('"}')[0]
                 # print(q_id)
